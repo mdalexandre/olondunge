@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Olondunge" width="860">
+</p>
+
 # Olondunge
 
 **Let the model inside Claude Code, Codex or Grok allocate work to the other agent CLIs on your
@@ -24,6 +28,10 @@ verdict) in the same turn.
 | Skill `olondunge` | teaches the host model the allocation loop, the packet format, and when to pin a lane, model or effort |
 | Skill `tristack-compiler` | teaches the host model to obey a tri-stack contract in Claude Code, Codex or Grok |
 | `tri:` activation | a UserPromptSubmit hook for Claude Code and Codex; the `tri-grok` entry point for Grok |
+
+<p align="center">
+  <img src="assets/hero-allocation.png" alt="One seed sending work outward along the claude, codex, grok and local lanes, with a dashed path for the blind check coming back" width="860">
+</p>
 
 ## Requirements
 
@@ -114,6 +122,10 @@ A packet is a JSON object. Only `objective` is required:
   `VERDICT: PASS | FAIL | BLOCKED` line that `alloc_collect` turns into `verdict`. When only one
   lane can verify, it runs in a fresh session on the producer lane and says so in `warnings`.
 
+<p align="center">
+  <img src="assets/hero-verification.png" alt="A produced artifact crossing a veil of light to a verifier in its own session, which receives the artifact, the original inputs and the criteria, but not the producer's verdict" width="860">
+</p>
+
 ### `tri:` activation
 
 ```text
@@ -191,6 +203,24 @@ the Umbundu translation of Article 1 of the Universal Declaration of Human Right
 singular to plural pattern, which would make it "the minds", many minds held in one, which is
 what this server gives a model. That plural reading is the author's inference, not a sourced
 fact; native speakers are the authority on it.
+
+## Brand
+
+The logo and the imagery live in [`assets/`](assets), and
+[`assets/BRAND.md`](assets/BRAND.md) carries the palette, the geometry and the usage rules. The
+SVG files are the source; every PNG is rendered from them by one command, with no network call
+and no paid service:
+
+```bash
+python3 assets/build.py           # render and verify every image
+python3 assets/build.py --check   # verify what is on disk, render nothing
+```
+
+The build needs a Chrome or Chromium binary, because the artwork is built from SVG filter
+primitives that CairoSVG does not implement. It looks for `google-chrome`,
+`google-chrome-stable`, `chromium` and `chromium-browser` on PATH, and `OLONDUNGE_CHROME` names
+any other Chromium build explicitly. Each output is read back from its own PNG header and
+compared against the size the script declares, so a bad render fails the build.
 
 ## License
 

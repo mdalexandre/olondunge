@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- Visual identity in `assets/`: the mark (glowing, flat, animated and favicon variants), a
+  wordmark for a dark and for a light background, rasterised icons, a 1280 by 640 GitHub social
+  preview, a README banner and two hero scenes.
+- `assets/build.py` renders every PNG from its committed SVG through headless Chrome and asserts
+  each output's dimensions, byte size and background (transparent or opaque), with no network
+  call and no dependency outside the standard library. `OLONDUNGE_CHROME` names the browser binary when it is not on PATH.
+- `assets/BRAND.md` carries the palette, the geometry, clear space, minimum sizes and the usage
+  rules.
+
 ## 0.1.0 (2026-09-16)
 
 First public release.
