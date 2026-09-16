@@ -1,0 +1,16 @@
+{
+  "description": "Olondunge: compile a tri-stack contract when a prompt opens with tri:",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/tri_hook.py\" claude",
+            "timeout": 20
+          }
+        ]
+      }
+    ]
+  }
+}

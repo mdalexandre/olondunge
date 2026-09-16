@@ -1,0 +1,92 @@
+[project]
+name = "olondunge"
+version = "0.1.0"
+description = "An MCP server that lets the model inside Claude Code, Codex or Grok allocate work to the other agent CLIs on your machine, choosing the lane, the model and the reasoning effort, with blind verification. Ships the tri-stack compiler skill and its tri activation."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Mario Alexandre" }]
+requires-python = ">=3.11"
+keywords = ["mcp", "model-context-protocol", "claude-code", "codex", "grok", "agents", "allocation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development",
+]
+dependencies = [
+    "mcp>=2.2,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/mdalexandre/olondunge"
+Issues = "https://github.com/mdalexandre/olondunge/issues"
+
+[project.scripts]
+olondunge = "olondunge.cli:main"
+tri-grok = "olondunge.cli:tri_grok_main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/olondunge"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"skills" = "olondunge/skills"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/olondunge",
+    "skills",
+    "hooks",
+    "tests",
+    ".claude-plugin",
+    ".grok-plugin",
+    ".codex-plugin",
+    ".agents",
+    ".mcp.json",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "SECURITY.md",
+    "CHANGELOG.md",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.13",
+    "pytest>=8.3",
+    "ruff>=0.8",
+]
+
+[tool.ruff]
+src = ["src", "tests", "hooks"]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/olondunge"]
+
+[[tool.mypy.overrides]]
+module = ["mcp", "mcp.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]

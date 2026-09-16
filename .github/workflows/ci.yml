@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install
+        run: uv sync --python ${{ matrix.python }}
+      - name: Lint
+        run: uv run ruff check src tests hooks
+      - name: Format check
+        run: uv run ruff format --check src tests hooks
+      - name: Type check
+        run: uv run mypy
+      - name: Test
+        run: uv run pytest
+      - name: Build
+        run: uv build
+      - name: Wheel smoke
+        shell: bash
+        run: |
+          python_bin="$(uv python find ${{ matrix.python }})"
+          "$python_bin" -m venv /tmp/wheel-venv
+          /tmp/wheel-venv/bin/pip install --quiet dist/*.whl
+          /tmp/wheel-venv/bin/olondunge --version
+          /tmp/wheel-venv/bin/olondunge tri --host codex "tri plan: smoke" | grep -q "Contract: 1.1-cx."
+          /tmp/wheel-venv/bin/tri-grok --dry-run "tri: smoke" | grep -q "Contract: 1.1-gk."
+          /tmp/wheel-venv/bin/olondunge setup all --dry-run

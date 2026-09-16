@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "olondunge": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/mdalexandre/olondunge@v0.1.0",
+        "olondunge",
+        "serve"
+      ]
+    }
+  }
+}

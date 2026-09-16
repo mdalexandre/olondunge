@@ -1,0 +1,170 @@
+{
+ "generated_by": "the reference JavaScript tri-stack compiler (buildRequest, JSON.stringify indent 2, fnv1a)",
+ "cases": [
+  {
+   "sample": "tri: build a CLI that sorts my Downloads folder",
+   "request_json": "{\n  \"idea\": \"build a CLI that sorts my Downloads folder\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "97d7d77c"
+  },
+  {
+   "sample": "tri plan: migrate the billing tables\n@context: postgres 16\n@constraints: no downtime\n@constraints: keep ids",
+   "request_json": "{\n  \"idea\": \"migrate the billing tables\",\n  \"context\": \"postgres 16\",\n  \"constraints\": [\n    \"no downtime\",\n    \"keep ids\"\n  ],\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"PLAN_ONLY\"\n}",
+   "fingerprint": "32c4ed36"
+  },
+  {
+   "sample": "  TRI LOCAL :  fix the parser test\n@budget: 5 USD\n@deadline: friday\nsecond line of idea",
+   "request_json": "{\n  \"idea\": \"fix the parser test\\nsecond line of idea\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": \"5 USD\",\n  \"deadline\": \"friday\",\n  \"execution_authority\": \"EXECUTE_LOCAL\"\n}",
+   "fingerprint": "97bb5ed1"
+  },
+  {
+   "sample": "tri end-to-end: ship it\n@runtime:   linux  \n@context:\n\tnote: prose with a colon",
+   "request_json": "{\n  \"idea\": \"ship it\\n\\tnote: prose with a colon\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": \"linux\",\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "407c18a7"
+  },
+  {
+   "sample": "tri: unicode idea \u00e9\u4e2d\ud83d\ude00 with \"quotes\" and \\ backslash\n@constraints:  padded ",
+   "request_json": "{\n  \"idea\": \"unicode idea \u00e9\u4e2d\ud83d\ude00 with \\\"quotes\\\" and \\\\ backslash\",\n  \"context\": null,\n  \"constraints\": [\n    \"padded\"\n  ],\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "a023ebdb"
+  },
+  {
+   "sample": "tri end to end: spaced authority",
+   "request_json": "{\n  \"idea\": \"spaced authority\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "0ded38b7"
+  },
+  {
+   "sample": "tri EndToEnd: camel authority",
+   "request_json": "{\n  \"idea\": \"camel authority\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "c68b1441"
+  },
+  {
+   "sample": "tri:\u00a0nbsp after colon\u00a0",
+   "request_json": "{\n  \"idea\": \"nbsp after colon\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "ff73601c"
+  },
+  {
+   "sample": "tri: line sep\u2028inside idea",
+   "request_json": "{\n  \"idea\": \"line sep\u2028inside idea\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "3c868bf9"
+  },
+  {
+   "sample": "tri: ideographic\u3000space\u3000",
+   "request_json": "{\n  \"idea\": \"ideographic\u3000space\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "dc02ea03"
+  },
+  {
+   "sample": "tri: crlf idea\r\n@constraints: one\r\n@constraints: two\r\n",
+   "request_json": "{\n  \"idea\": \"crlf idea\",\n  \"context\": null,\n  \"constraints\": [\n    \"one\",\n    \"two\"\n  ],\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "33cc074f"
+  },
+  {
+   "sample": "\ufefftri: bom first",
+   "request_json": null,
+   "fingerprint": null
+  },
+  {
+   "sample": "tri: vertical\u000btab",
+   "request_json": "{\n  \"idea\": \"vertical\\u000btab\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "31f2ba4e"
+  },
+  {
+   "sample": "tri: combining e\u0301 and astral \ud834\udd1e",
+   "request_json": "{\n  \"idea\": \"combining e\u0301 and astral \ud834\udd1e\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "acb5b066"
+  },
+  {
+   "sample": "tri plan: @context: inline is prose\n@context: real context",
+   "request_json": null,
+   "fingerprint": null
+  },
+  {
+   "sample": "tri local: x\n@budget:\n@deadline:   ",
+   "request_json": "{\n  \"idea\": \"x\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_LOCAL\"\n}",
+   "fingerprint": "5313bb0a"
+  },
+  {
+   "sample": "hello tri: not a trigger",
+   "request_json": null,
+   "fingerprint": null
+  },
+  {
+   "sample": "tri:   ",
+   "request_json": null,
+   "fingerprint": null
+  },
+  {
+   "sample": "trip: not a trigger",
+   "request_json": null,
+   "fingerprint": null
+  },
+  {
+   "sample": "tri plan without colon",
+   "request_json": null,
+   "fingerprint": null
+  },
+  {
+   "sample": "TRI: shouting",
+   "request_json": "{\n  \"idea\": \"shouting\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "4a94d403"
+  },
+  {
+   "sample": "tri: a\ttab\tseparated idea",
+   "request_json": "{\n  \"idea\": \"a\\ttab\\tseparated idea\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "4417b8ba"
+  },
+  {
+   "sample": "tri plan: design the cache\n@constraints: under 50 ms\n@constraints: no redis\n@constraints: \u00fcnicode constraint",
+   "request_json": "{\n  \"idea\": \"design the cache\",\n  \"context\": null,\n  \"constraints\": [\n    \"under 50 ms\",\n    \"no redis\",\n    \"\u00fcnicode constraint\"\n  ],\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"PLAN_ONLY\"\n}",
+   "fingerprint": "158374c3"
+  },
+  {
+   "sample": "tri local: \u0645\u0631\u062d\u0628\u0627 right to left idea",
+   "request_json": "{\n  \"idea\": \"\u0645\u0631\u062d\u0628\u0627 right to left idea\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_LOCAL\"\n}",
+   "fingerprint": "ce618127"
+  },
+  {
+   "sample": "tri: idea\n@deadline: 2026-12-01T00:00:00Z\n@budget: $20",
+   "request_json": "{\n  \"idea\": \"idea\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": \"$20\",\n  \"deadline\": \"2026-12-01T00:00:00Z\",\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "943757f7"
+  },
+  {
+   "sample": "tri:no space after colon",
+   "request_json": "{\n  \"idea\": \"no space after colon\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "158eb06e"
+  },
+  {
+   "sample": "tri   plan  :   extra spaces around authority",
+   "request_json": "{\n  \"idea\": \"extra spaces around authority\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"PLAN_ONLY\"\n}",
+   "fingerprint": "e06bbe5e"
+  },
+  {
+   "sample": "tri: emoji only \ud83d\ude80\ud83d\udd25",
+   "request_json": "{\n  \"idea\": \"emoji only \ud83d\ude80\ud83d\udd25\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "a7c721d5"
+  },
+  {
+   "sample": "tri local: multi\nline\nidea\n\n@context: after blank line",
+   "request_json": "{\n  \"idea\": \"multi\\nline\\nidea\",\n  \"context\": \"after blank line\",\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_LOCAL\"\n}",
+   "fingerprint": "80597e25"
+  },
+  {
+   "sample": "tri: trailing bom\ufeff",
+   "request_json": "{\n  \"idea\": \"trailing bom\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "a42755fc"
+  },
+  {
+   "sample": "tri: trailing file separator\u001c",
+   "request_json": "{\n  \"idea\": \"trailing file separator\\u001c\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "7fcb448a"
+  },
+  {
+   "sample": "tri: \u001f unit separator first",
+   "request_json": "{\n  \"idea\": \"\\u001f unit separator first\",\n  \"context\": null,\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": null,\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "a6084ed9"
+  },
+  {
+   "sample": "tri: idea\n@context: \ufeffbom context\ufeff\n@budget: \u001d",
+   "request_json": "{\n  \"idea\": \"idea\",\n  \"context\": \"bom context\",\n  \"constraints\": null,\n  \"runtime\": null,\n  \"budget\": \"\\u001d\",\n  \"deadline\": null,\n  \"execution_authority\": \"EXECUTE_END_TO_END\"\n}",
+   "fingerprint": "ad41f01a"
+  }
+ ]
+}

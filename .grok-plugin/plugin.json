@@ -1,0 +1,23 @@
+{
+  "name": "olondunge",
+  "version": "0.1.0",
+  "description": "Lets the model inside Claude Code, Codex or Grok allocate work to the agent CLIs on your machine, choosing the lane, the model and the reasoning effort, with blind verification on a different lane. Ships the tri-stack compiler skill and its tri: activation.",
+  "author": {
+    "name": "Mario Alexandre",
+    "url": "https://github.com/mdalexandre"
+  },
+  "homepage": "https://github.com/mdalexandre/olondunge",
+  "repository": "https://github.com/mdalexandre/olondunge",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mcp",
+    "allocation",
+    "claude-code",
+    "codex",
+    "grok",
+    "model-routing",
+    "reasoning-effort",
+    "verification",
+    "tri-stack"
+  ]
+}
